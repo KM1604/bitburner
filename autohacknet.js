@@ -15,10 +15,9 @@ export async function main(ns) {
   
   while (true) {
     // is hacknet profitable?
-    let totalHacknetCost = ns.getMoneySources().sinceInstall.hacknet_expenses
-    let totalHacknetProfit = ns.getMoneySources().sinceInstall.totalHacknetProfit
+    let totalHacknetCost = -1 * ns.getMoneySources().sinceInstall.hacknet_expenses
+    let totalHacknetProfit = ns.getMoneySources().sinceInstall.hacknet
     let hn_profitable = totalHacknetProfit > totalHacknetCost
-
     let hnBalanced = !ns.scriptRunning("balancedHacknet.js", "home")
 
     // buy a node if:
